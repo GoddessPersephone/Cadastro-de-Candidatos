@@ -1,0 +1,72 @@
+﻿@model List<CandidatoModel>
+@{
+    ViewData["Title"] = "Lista de Candidatos";
+}
+
+@if(TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-info" role="alert">
+        <button type="button" class="btn btn-warning btn-sm close-alert" arial-label="Close">x</button>
+      Parabens por sonhar alto! <a href="#" class="alert-link">Voce vai conseguir</a>. Voce tem muito potencial.
+      @TempData["MensagemSucesso"]
+    </div>    
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+        Não desista! <a href="#" class="alert-link">Foi um erro para aprendizado</a>. Voce vai encontrar a solução!
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<br />
+
+<div class="text-center">
+
+    <strong class="display-4">Banco de Talentos</strong>
+    
+    <br />
+
+    <div class="d-grid gap-2 d-md-flex justfy-content-md-start">
+        <a class="btn btn-success"role="button" asp-controller="Candidato" asp-action="Criar">Adicionar um novo Candidato</a>
+    </div>
+
+    <hr />
+ 
+<table class="table table-success table-striped" id="table-candidatos"> 
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Celular</th>
+      <th scope="col">Email</th>
+      <th scope="col">Conhecimentos</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+        @if(Model !=null && Model.Any())
+        {
+             foreach (CandidatoModel candidato in Model)
+             {
+                <tr>
+                    <th scope="row">@candidato.Id</th>
+                    <td>@candidato.Nome</td>
+                    <td>@candidato.Celular</td>
+                    <td>@candidato.Email</td>
+                    <td>@candidato.Conhecimento</td>
+                    <td>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-secondary" asp-controller="Candidato" asp-route-Id="@candidato.Id" asp-action="Editar">Editar</a>          
+                        <a class="btn btn-warning" asp-controller="Candidato" asp-route-Id="@candidato.Id" asp-action="ApagarConfirmacao">Apagar</a>
+                    </div>         
+                    </td>
+                </tr>
+             }
+        }
+  </tbody>
+</table>
+
+</div>

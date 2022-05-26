@@ -1,0 +1,41 @@
+﻿@model CandidatoModel
+@{
+    ViewData["Title"] = "Editar Cadastro";
+}
+
+<div class="container-fluid">
+
+    <strong class="display-4">Editar Cadastro</strong>
+
+    <hr />
+
+   <form asp-controller="Candidato" asp-action="Alterar" method="post">
+
+       <input type="hidden" asp-for="Id" />
+      <div class="form-group">
+        <label for="Nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o Nome do Candidato">      
+        @Html.ValidationMessageFor(x => x.Nome)
+      </div>
+      <div class="form-group">
+        <label for="celular">Celular</label>
+        <input type="text" asp-for="Celular" class="form-control" placeholder="Informe o nº Celular do Candidato">       
+        @Html.ValidationMessageFor(x => x.Celular)
+      </div>
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" asp-for="Email" class="form-control" placeholder="Digite o Email do Candidato">        
+        @Html.ValidationMessageFor(x => x.Email)
+      </div>
+      <div class="form-group">
+        <label for="Conhecimentos">Conhecimentos</label>
+        <input type="text" asp-for="Conhecimento" class="form-control" placeholder="Informe os Conhecimentos do Candidato">       
+        @Html.ValidationMessageFor(x => x.Conhecimento)
+      </div>
+
+      <button type="submit" class="btn btn-info btn-block">Alterar</button>
+      <a class="btn btn-secondary btn-block" asp-controller="Candidato" asp-action="Index" role="button">Voltar</a>
+
+   </form>
+ 
+</div>

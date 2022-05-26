@@ -1,0 +1,68 @@
+﻿@model List<VagasModel>
+@{
+    ViewData["Title"] = "Lista de Vagas";
+}
+
+@if(TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-info" role="alert">
+        <button type="button" class="btn btn-warning btn-sm close-alert" arial-label="Close">x</button>
+      Parabens por sonhar alto! <a href="#" class="alert-link">Voce vai conseguir</a>. Voce tem muito potencial.
+      @TempData["MensagemSucesso"]
+    </div>    
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+        Não desista! <a href="#" class="alert-link">Foi um erro para aprendizado</a>. Voce vai encontrar a solução!
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<br />
+
+<div class="text-center">
+
+    <strong class="display-4">Banco de Vagas</strong>
+    
+    <br />
+
+    <div class="d-grid gap-2 d-md-flex justfy-content-md-start">
+        <a class="btn btn-success"role="button" asp-controller="Vagas" asp-action="Criar">Adicionar uma nova Vaga</a>
+    </div>
+
+    <hr />
+ 
+<table class="table table-success table-striped" id="table-vagas"> 
+  <thead>
+    <tr>
+      <th scope="col">#</th>   
+      <th scope="col">Vagas</th>
+      <th scope="col">Requisitos</th>      
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+        @if(Model !=null && Model.Any())
+        {
+             foreach (VagasModel vaga in Model)
+             {
+                <tr>
+                    <th scope="row">@vaga.Id</th>
+                    <td>@vaga.Vagas</td>                    
+                    <td>@vaga.Requisitos</td>  
+                    <td>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-secondary" asp-controller="Vagas" asp-route-Id="@vaga.Id" asp-action="Editar">Editar</a>          
+                        <a class="btn btn-warning" asp-controller="Vagas" asp-route-Id="@vaga.Id" asp-action="ApagarConfirmacao">Apagar</a>
+                    </div>         
+                    </td>
+                </tr>
+             }
+        }
+  </tbody>
+</table>
+
+</div>

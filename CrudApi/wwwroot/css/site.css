@@ -1,0 +1,163 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: linear-gradient(45deg,aqua,lightblue);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+div-container {
+    color: cadetblue;
+}
+
+main.container {
+    background: white;
+    max-width: 350px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    position: relative;
+}
+
+    .input-field input {
+        outline: none;
+        font-size: 18px;
+        color: rgba(0,0,0,0.7);
+    }
+
+        .input-field input::placeholder {
+            color: rgba(0,0,0,0.7);
+        }
+
+form input[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    background: linear-gradient(to left,#4776E6,#8e54e9);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+form button [type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    background: linear-gradient(to left,#4776E6,#8e54e9);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 5px;
+    background: linear-gradient(to right,#4776E6,#8e54e9);
+}
+
+form input[type="submit"]:hover {
+    letter-spacing: 5px;
+    background: linear-gradient(to right,#4776E6,#8e54e9);
+}
+
+.field-validation-error {
+    color: #ef0a0a;
+}
+
+.close-alert {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 31px;
+}
